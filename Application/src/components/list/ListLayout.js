@@ -12,6 +12,7 @@ const ListLayout = (props) => {
       <div className="tranxlist__filter">
         <FilterComponent
           openFilter={props.openFilter}
+          txfilter={props.txfilter}
         />
       </div>
       <div className="tranxlist__list">

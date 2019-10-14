@@ -1,5 +1,6 @@
 import React from 'react';
 import { LABEL_FILTER } from '../../../constants/labels';
+import FilterSection from './FilterSection';
 
 class FilterComponent extends React.Component {
   constructor() {
@@ -19,15 +20,7 @@ class FilterComponent extends React.Component {
           <label className="title">{LABEL_FILTER}</label>
           <span className="plus" onClick={this.manageFilter}></span>
         </div>
-        <div className="tranxlist__filtersec">
-          <label className="title">Account Name</label>
-          <div className="tranxlist__checklist">
-            <div className="checkbox">
-              <input type="checkbox" />
-            </div>
-            <label className="label">Savings</label>
-          </div>
-        </div>
+        <FilterSection txfilter={this.props.txfilter}/>
     </div>
   }  
 }

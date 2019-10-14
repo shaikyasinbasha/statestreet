@@ -1,7 +1,8 @@
 import { UPDATE_TRANSACTION_LIST } from "../constants/actions";
 
 const initialState = {
-  transactionlist: []
+  transactionlist: [],
+  txfilter: [{type: 'accountName'},{type: 'accountName'}]
 };
     
 const transaction = (state = initialState, action) => {

@@ -10,7 +10,8 @@ const ListContainer = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-      transactionlist: state.transaction.transactionlist
+      transactionlist: state.transaction.transactionlist,
+      txfilter: state.transaction.txfilter
     }
 }
 
