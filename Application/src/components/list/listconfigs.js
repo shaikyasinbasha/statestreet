@@ -12,7 +12,8 @@ export const TransationsColumns = [{
     filerable: true
 },{
     label: LABEL_CURRENCY,
-    dataIndex: 'currencyCode'
+    dataIndex: 'currencyCode',
+    filerable: true
 },{
     label: LABEL_AMOUNT,
     dataIndex: 'amount'

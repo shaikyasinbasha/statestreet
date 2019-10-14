@@ -17,10 +17,16 @@ class ListLayout extends React.Component {
             transactionlist={this.props.transactionlist}
             updateFilter={this.props.updateFilter}
             closeFilter={this.props.closeFilter}
+            updateTxnWithFilter={this.props.updateTxnWithFilter}
+            txcriteria={this.props.txcriteria}
           />
         </div>
         <div className="tranxlist__list">
-          <TransationsComponent {...this.props}/>
+          <TransationsComponent
+            transactionlist={this.props.transactionlist}
+            getList={this.props.getList}
+            txcriteria={this.props.txcriteria}
+          />
         </div>
       </section>
     </div>

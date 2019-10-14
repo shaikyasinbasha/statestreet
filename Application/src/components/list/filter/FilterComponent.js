@@ -8,6 +8,21 @@ class FilterComponent extends React.Component {
   constructor() {
     super();
     this.manageFilter = this.manageFilter.bind(this);
+    this.updateTxnWithFilterExt = this.updateTxnWithFilterExt.bind(this);
+  }
+  updateTxnWithFilterExt (data) {
+    let {txcriteria} = this.props;
+    if(!txcriteria[data.type]) {
+      txcriteria[data.type] = [data.name];
+    }else if (txcriteria[data.type].indexOf(data.name) !== -1) {
+      txcriteria[data.type] = txcriteria[data.type].
+      filter((c) => { return c !== data.name })
+      if(txcriteria[data.type].length == 0)
+        delete txcriteria[data.type];
+    }else{
+        txcriteria[data.type].push(data.name)
+    }
+    this.props.updateTxnWithFilter(txcriteria);
   }
   manageFilter() {
     this.props.openFilter({
@@ -29,10 +44,13 @@ class FilterComponent extends React.Component {
         {this.props.txfilter.map((item, index) => {
           const filterType = TransationsColumns.
           filter(column => column.dataIndex === item)[0];
-          return <span key={index}><FilterSection
-            filterType={filterType}
-            transactionlist={this.props.transactionlist}
-          /></span>
+          return <span key={index}>
+            <FilterSection
+              filterType={filterType}
+              transactionlist={this.props.transactionlist}
+              updateTxnWithFilterExt={this.updateTxnWithFilterExt}
+            />
+          </span>
         })
         }
         

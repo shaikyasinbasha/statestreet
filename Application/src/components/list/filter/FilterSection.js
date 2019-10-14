@@ -1,14 +1,22 @@
 import React from 'react';
-import FilterItems from './FilterItems';
 
 class FilterSection extends React.Component {
   construcEachItem () {
-    const {transactionlist} = this.props;
-    const list = transactionlist.map(x => x[this.props.filterType.dataIndex]);
+    const {transactionlist, filterType, updateTxnWithFilterExt} = this.props;
+    const list = transactionlist.map(x => x[filterType.dataIndex]);
     return [...new Set(list)].map((item, index) => (
       <div key={index} className="tranxlist__checklist">
         <div className="checkbox">
-            <input type="checkbox" />
+            <input type="checkbox"
+              name={item}
+              onChange={(e) => {
+                const name = e.target.getAttribute('name');
+                updateTxnWithFilterExt({
+                  type: filterType.dataIndex,
+                  name
+                })
+              }}
+            />
         </div>
         <label className="label">{item}</label>
       </div>
