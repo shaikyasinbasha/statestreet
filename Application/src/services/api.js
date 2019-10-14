@@ -1,5 +1,6 @@
 
 import axios from 'axios';
+import './intercepter';
 import { TRANSATIONLIST, TRANSATIONDETAILS } from '../constants/services';
 import { updateTransationList, updateTransationDetails } from '../actions/transctionactions';
 

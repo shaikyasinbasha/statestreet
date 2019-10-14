@@ -10,7 +10,9 @@ const ListLayout = (props) => {
     </section>
     <section className="tranxlist__body">
       <div className="tranxlist__filter">
-        <FilterComponent />
+        <FilterComponent
+          openFilter={props.openFilter}
+        />
       </div>
       <div className="tranxlist__list">
         <TransationsComponent {...props}/>
