@@ -1,6 +1,6 @@
 import React from 'react';
-import { LABEL_TRANSATION_TYPE, LABEL_AMOUNT, LABEL_CURRENCY, LABEL_ACCOUNT_NAME, LABEL_ACCOUNT } from "../../../constants/labels";
-import { AccountNo } from "./AccountNo";
+import { LABEL_TRANSATION_TYPE, LABEL_AMOUNT, LABEL_CURRENCY, LABEL_ACCOUNT_NAME, LABEL_ACCOUNT } from "../../constants/labels";
+import { AccountNo } from "./transactions/AccountNo";
 
 export const TransationsColumns = [{
     label: LABEL_ACCOUNT,

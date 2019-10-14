@@ -1,5 +1,5 @@
 import React from 'react';
-import { TransationsColumns } from './listconfigs';
+import { TransationsColumns } from './../listconfigs';
 import GridComponent from '../../common/grid/GridComponent';
 
 class TransationsComponent extends React.Component {

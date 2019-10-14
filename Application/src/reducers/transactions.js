@@ -1,14 +1,17 @@
-import { UPDATE_TRANSACTION_LIST } from "../constants/actions";
+import { UPDATE_TRANSACTION_LIST, UPDATE_FILTER_CTRITIRAI } from "../constants/actions";
 
 const initialState = {
   transactionlist: [],
-  txfilter: [{type: 'accountName'},{type: 'accountName'}]
+  txfilter: ['accountName']
 };
     
 const transaction = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_TRANSACTION_LIST: {
       return {...state, transactionlist: action.data}
+    }
+    case UPDATE_FILTER_CTRITIRAI: {
+      return {...state, txfilter: [...action.data]}
     }
     default: 
       return state

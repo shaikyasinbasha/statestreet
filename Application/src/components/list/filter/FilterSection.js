@@ -1,17 +1,24 @@
 import React from 'react';
+import FilterItems from './FilterItems';
 
 class FilterSection extends React.Component {
-  render () {
-    return (this.props.txfilter.map((item, index) =>
-    <div key={index} className="tranxlist__filtersec">
-    <label className="title">Account Name</label>
-    <div className="tranxlist__checklist">
-      <div className="checkbox">
-        <input type="checkbox" />
+  construcEachItem () {
+    const {transactionlist} = this.props;
+    const list = transactionlist.map(x => x[this.props.filterType.dataIndex]);
+    return [...new Set(list)].map((item, index) => (
+      <div key={index} className="tranxlist__checklist">
+        <div className="checkbox">
+            <input type="checkbox" />
+        </div>
+        <label className="label">{item}</label>
       </div>
-      <label className="label">Savings</label>
-    </div>
-  </div>))
+    ))
+  }
+  render () {
+    return <div className="tranxlist__filtersec">
+    <label className="title">{this.props.filterType.label}</label>
+    {this.construcEachItem()}   
+  </div>
   }
 }
 
