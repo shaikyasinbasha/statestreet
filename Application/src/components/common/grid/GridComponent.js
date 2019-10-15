@@ -20,6 +20,10 @@ class GridComponent extends React.Component {
           />
         </tbody>
       </table>
+      <div>
+        <div ></div>
+        <div className="pagination"><button>&lt;</button><label>2</label><button>&gt;</button></div>
+      </div>
     </div>
   }  
 }

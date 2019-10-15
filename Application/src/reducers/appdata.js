@@ -1,7 +1,7 @@
 import { OPEN_MODAL_POPUP, CLOSE_MODAL_POPUP, LOADNG_SPINNER } from "../constants/actions";
 
 const initialState = {
-  loading: true,
+  loading: false,
   modalopen: false,
   modaltitle: 'Modal Title',
   modalcontent: null

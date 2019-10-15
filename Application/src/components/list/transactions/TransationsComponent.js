@@ -14,7 +14,7 @@ class TransationsComponent extends React.Component {
           return false;
       }
       return true;
-    })
+    }).slice(0, 100)
   }
   render () {
     return <div className="">
