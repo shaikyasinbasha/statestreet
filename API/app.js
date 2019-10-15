@@ -10,11 +10,15 @@ app.all('/*', function(req, res, next) {
     next();
 });
 
+app.get('/', function(req, res){
+         res.send("Sever is runing on server 8081")
+ });
+
 app.get('/services/list', function(req, res){
    setTimeout(function(){
         res.send({
             success: true,
-            data: transactions.slice(0, 10),
+            data: transactions,
             pagination: {
                 total: transactions.length,
                 start: 0,
